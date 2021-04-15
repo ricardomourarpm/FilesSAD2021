@@ -1,0 +1,38 @@
+[System]
+Name='Salario_para_aluno_2'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='matemático'
+Range=[7 20]
+NumMFs=2
+MF1='raz':'trapmf',[11 13 17 19]
+MF2='bom':'trapmf',[13 18 20 20]
+
+[Input2]
+Name='físico'
+Range=[7 20]
+NumMFs=2
+MF1='raz':'trapmf',[11 13 17 19]
+MF2='bom':'trapmf',[13 18 20 20]
+
+[Output1]
+Name='salário'
+Range=[0 2000]
+NumMFs=2
+MF1='bom':'trapmf',[600 1000 2000 2000]
+MF2='razoavel':'trapmf',[500 700 800 1000]
+
+[Rules]
+2 1, 1 (1) : 1
+2 2, 1 (1) : 1
+1 1, 2 (1) : 1
